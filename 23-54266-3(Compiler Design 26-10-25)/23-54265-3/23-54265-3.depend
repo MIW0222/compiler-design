@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1762350777 source:f:\users\user\documents\compiler\23-54265-3\task1.cpp
+	<iostream>
+
+1762350778 source:f:\users\user\documents\compiler\23-54265-3\task2.cpp
+	<iostream>
+
+1762350778 source:f:\users\user\documents\compiler\23-54265-3\task3.cpp
+	<iostream>
+	<string>
+
+1762350779 source:f:\users\user\documents\compiler\23-54265-3\task4.cpp
+	<iostream>
+	<string>
+
+1762350780 source:f:\users\user\documents\compiler\23-54265-3\task5.cpp
+	<iostream>
+	<math.h>
+
+1762350780 source:f:\users\user\documents\compiler\23-54265-3\task6.cpp
+	<iostream>
+	<math.h>
+
+1762350781 source:f:\users\user\documents\compiler\23-54265-3\task7.cpp
+	<iostream>
+	<string>
+
+1762355036 source:f:\users\user\documents\compiler\23-54265-3\main.cpp
+	<iostream>
+	<string>
+	<math.h>
+
