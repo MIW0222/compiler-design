@@ -4,21 +4,38 @@ using namespace std;
 
 bool isSingLineComm(string line)
 {
-    int pos=line.find("//");
-    return pos>=0;
+    for (int i = 0; i < line.length() - 1; i++)
+    {
+        if (line[i] == '/' && line[i + 1] == '/')
+        {
+            return true;
+        }
+    }
+    return false;
 }
 
-bool isMultLineComm(string line)
+bool isMultLineCommStart(string line)
 {
-    int start=line.find("/*");
-    int end=line.find("*/");
-
-    return start>=0 && end>=0 && start<end;
+    for (int i = 0; i < line.length() - 1; i++)
+    {
+        if (line[i] == '/' && line[i + 1] == '*')
+        {
+            return true;
+        }
+    }
+    return false;
 }
 
-bool isCommLine(string line)
+bool isMultLineEnd(string line)
 {
-    return isSingLineComm(line) || isMultLineComm(line);
+    for (int i = 0; i < line.length() - 1; i++)
+    {
+        if (line[i] == '*' && line[i + 1] == '/')
+        {
+            return true;
+        }
+    }
+    return false;
 }
 
 int main()
@@ -37,3 +54,4 @@ int main()
 
     return 0;
 }
+
