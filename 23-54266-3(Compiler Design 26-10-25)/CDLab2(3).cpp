@@ -14,7 +14,7 @@ bool isSingLineComm(string line)
     return false;
 }
 
-bool isMultLineCommStart(string line)
+bool isMultLineStart(string line)
 {
     for (int i = 0; i < line.length() - 1; i++)
     {
@@ -40,18 +40,46 @@ bool isMultLineEnd(string line)
 
 int main()
 {
-    string input;
-    getline(cin, input);
+    string line;
+            bool inMultiline = false;
 
-    if(isCommLine(input))
-    {
-        cout << "This is a comment line." << endl;
-    }
-    else
-    {
-        cout << "This is not a comment line." << endl;
-    }
+            cout << "Enter multiple lines (type STP to stop):";
+            cin.ignore();
+
+            while (true)
+            {
+                getline(cin, line);
+                if (line == "STP")
+                {
+                    break;
+                }
+
+                if (inMultiline)
+                {
+                    cout << "This line is inside a multi-line comment." << endl;
+                    if (isMultLineEnd(line))
+                    {
+                       cout<<"This is the end of the multi-line comment."<<endl;
+                       inMultiline = false;
+                    }
+                }
+                else if (isSingLineComm(line))
+                {
+                    cout << "This is a single-line comment." << endl;
+                }
+                else if (isMultLineStart(line))
+                {
+                    cout << "This is the start of a multi-line comment." << endl;
+                    if (!isMultLineEnd(line))
+                        inMultiline = true;
+                }
+                else
+                {
+                    cout << "This is not a comment line." << endl;
+                }
+            }
 
     return 0;
 }
+
 
